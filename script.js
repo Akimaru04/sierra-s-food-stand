@@ -19,7 +19,7 @@ function navigateTo(section) {
     content.innerHTML = `
         <section class="about-hero">
             <div class="about-container">
-                <img src="dp.jpg" alt="dp" class="about-hero-photo">
+                <img src="dp1.jpg" alt="dp" class="about-hero-photo">
                 <div class="about-text">
                     <h1>Arjay Sierra</h1>
                     <h2>Fresh • Local • Made with Love</h2>
