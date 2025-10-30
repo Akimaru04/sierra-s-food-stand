@@ -149,8 +149,9 @@ footer {
 /* Grid layout for menu items */
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* smaller min width for better fit */
+  gap: 20px;
+  width: 90%; /* use percentage instead of fixed max-width */
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -172,7 +173,8 @@ footer {
 /* Images inside each menu item */
 .menu-item img {
   width: 100%;
-  height: 200px;
+  height: auto; /* remove fixed height for responsiveness */
+  aspect-ratio: 4 / 3; /* keeps shape consistent */
   border-radius: 10px;
   object-fit: cover;
   margin-bottom: 15px;
@@ -180,7 +182,7 @@ footer {
 
 /* Shake titles */
 .menu-item h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #2c2c2c;
   margin-bottom: 10px;
 }
@@ -195,10 +197,51 @@ footer {
 /* Price styling */
 .menu-item .price {
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #2c5282;
   background-color: #f7c67b4d;
   padding: 4px 12px;
   border-radius: 8px;
+}
+
+/* -------------------- Responsive Adjustments -------------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .menu-grid {
+    gap: 15px;
+  }
+
+  .menu-item {
+    padding: 15px;
+  }
+
+  .menu-item h2 {
+    font-size: 1.1rem;
+  }
+
+  .menu-item p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .menu-grid {
+    grid-template-columns: 1fr; /* single column on small screens */
+    width: 95%;
+  }
+
+  .menu-item img {
+    aspect-ratio: 1 / 1; /* square image for smaller devices */
+  }
+
+  .menu-item h2 {
+    font-size: 1rem;
+  }
+
+  .menu-item p {
+    font-size: 0.9rem;
+  }
 }
